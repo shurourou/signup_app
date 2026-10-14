@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Login</h1>
+    <style>
+        body {font-family: Helvetica; color:rgb(40, 4, 4); background-color: rgb(251, 251, 239); font-size: 16px;}
+        h1 {color:rgb(0, 0, 0)}
+
+        .form {width: 280px;}
+        
+        .form-row {
+            position: relative;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hide the text labels so they don't break the rounded input design */
+        .form-row label {
+            display: none;
+        }
+
+        /* Username Field (Styled to match your design) */
+        #login_username {
+            width: 100%;
+            height: 44px;
+            padding-left: 48px;
+            padding-right: 16px;
+            border-radius: 50px;
+            border: 1px solid #c4beb4;
+            background-color: #dcdcdc;
+            color: #333333;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238c6d58"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: 16px center;
+            background-size: 18px 18px;
+        }
+
+        /* Password Field (Styled to match your design) */
+        #login_password {
+            width: 100%;
+            height: 44px;
+            padding-left: 48px;
+            padding-right: 42px;
+            border-radius: 50px;
+            border: 1px solid #c4beb4;
+            background-color: #dcdcdc;
+            color: #333333;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238c6d58"><path d="M12.65 10C11.7 7.31 9.08 5.5 6 5.5c-3.58 0-6.5 2.92-6.5 6.5s2.92 6.5 6.5 6.5c3.08 0 5.7-1.81 6.65-4.5H17v3h3v-3h2v-4H12.65zM6 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: 16px center;
+            background-size: 18px 18px;
+        }
+
+        /* Eye Icon Positioning */
+        #login_eye_button {
+            position: absolute;
+            right: 14px;
+            top: 55%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        #login_eye_button svg {
+            width: 80%;
+            height: 80%;
+            fill: #8c6d58; 
+        }
+
+        /* Buttons Styling */
+        #login_button, #sign_up {
+            background-color: #221e1e; /* background */
+            color: #dcdcdc;            /* text */
+            padding: 10px 20px;         /* Internal padding */
+            border: none;               /* Removes default browser border */
+            border-radius: 50px;        /* Capsule rounded edges */
+            font-size: 14px;
+            font-weight: 500;
+            font-family: sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Drop shadow */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        /* Forgot password */
+        .forgot-password {
+            text-align: right;
+            font-size: 13px;
+            margin-top: 0;
+        }
+
+        .forgot-password a {
+            color: #8c6d58;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Fix Browser Autofill Light-Blue Background */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #dcdcdc inset !important;
+            -webkit-text-fill-color: #333333 !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+        <div class="form">
+        <div class="form-row">
+            <label for="username">Username</label>
+            <input input type="" id="login_username">
+        </div>
+
+        <div class="form-row">
+            <label for="password">Password</label>
+            <input type="password" id="login_password">
+            <span id="login_eye_button">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+            </span>
+        </div>
+        
+        <!-- link to password page -->
+        <p class="forgot-password"> 
+            <a href="./forgot_password.html">Forgot Password?</a>
+        </p>
+    
+    <br><br>
+        <button id="login_button"> Login </button>
+         &nbsp;
+        <button id="sign_up"> Sign up </button>
+
+</body>
+</html>
+   <script> 
+    ///getting element from the web 
+    var username = document.getElementById("login_username")
+    var password = document.getElementById("login_password")
+
+    ///fetch file, get data
+    // var database = null //empty
+    // var getdb = async() => {
+    //     database = await fetch("database.json") //pause here until the fetch completes (a Promise settles (resolves or rejects))
+    //     database = await database.json()
+    //     console.log(database) //check database
+    // }  
+    // getdb() //call function 
+    
+    ///show or hide the password 
+    document.getElementById("login_eye_button").onclick = () => {
+    if (password.type == "text") {
+        password.type = "password" //hide password
+    } else {
+        password.type = "text" //show password
+    }
+    }
+
+    ///run authentication when the login button is clicked
+    // document.getElementById("login_button").onclick = () => {
+    // database.forEach(user => { //FOR loop (loop through every user in database)
+    //     console.log(user)
+    // // if username and password match the database
+    // if (username.value == user.email && password.value == user.password) {
+    //     console.log("login")
+    // } else {console.log("No user found")} // if not in database
+    // });
+    // }
+  
+   </script>
+   <script> 
+   document.getElementById("sign_up").onclick = () => {
+    window.location.href = "signup.html"
+   }
+   </script>
+   
+    <script src="pocket_base.js" type="module"> 
+    </script>
+</html>
